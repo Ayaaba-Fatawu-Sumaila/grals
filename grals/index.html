@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-GRAL'S Service - Taste the Tradition. Feel the Spice.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo-container">
+                <div class="logo-img"><i class="fas fa-home"></i></div>
+                <a href="#" class="logo">L-<span>GRAL'S</span></a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#" class="nav-link" data-page="home-page">Home</a></li>
+                <li><a href="#" class="nav-link" data-page="products-page">Products</a></li>
+                <li><a href="#" class="nav-link" data-page="ad-page">Advertisement</a></li>
+                <li><a href="#" class="nav-link" data-page="contact-page">Contact & Social</a></li>
+                
+            </ul>
+        </div>
+    </nav>
+
+    <!-- WhatsApp Popup -->
+    <div class="whatsapp-popup">
+        <div class="whatsapp-msg" id="whatsappMsg">Reach out to us for the best shito taste</div>
+        <a href="https://wa.me/0573279321" class="whatsapp-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Home Page -->
+    <div id="home-page">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Taste the Tradition. Feel the Spice.</h1>
+                <p>Authentic Ghanaian Shito made with love and traditional recipes</p>
+                <a href="https://wa.me/0573279321" class="btn">Order Now</a>
+            </div>
+        </section>
+
+        <!-- Image Slider -->
+        <div class="container">
+            <div class="image-slider">
+                <div class="slide active" style="background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/banku.jpg');">
+                    <div class="slide-content">
+                        <h3>Spicy Shito</h3>
+                        <p>For those who love an extra kick of heat</p>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/kenkey.jpg');">
+                    <div class="slide-content">
+                        <h3>Mild Shito</h3>
+                        <p>All the flavor with a milder heat level</p>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/Waakye.jpg');">
+                    <div class="slide-content">
+                        <h3>Hot Shito</h3>
+                        <p>100% plant-based without compromising on flavor</p>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/shito-cup.jpg');">
+                    <div class="slide-content">
+                        <h3>Original Recipe</h3>
+                        <p>The authentic taste of the Ghanaian shito</p>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/shito_cup.jpg');">
+                    <div class="slide-content">
+                        <h3>Gourmet Blend</h3>
+                        <p>Premium ingredients for a special experience</p>
+                    </div>
+                </div>
+                <div class="slide-nav">
+                    <div class="slide-dot active" data-slide="0"></div>
+                    <div class="slide-dot" data-slide="1"></div>
+                    <div class="slide-dot" data-slide="2"></div>
+                    <div class="slide-dot" data-slide="3"></div>
+                    <div class="slide-dot" data-slide="4"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <section class="about">
+            <div class="container">
+                <h2 class="section-title">About Us</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>L-Grals Shito recipe has been passed down through generations, carefully preserving the authentic flavors of Ghanaian cuisine. Each jar of the shito is crafted with passion and precision, using only the finest ingredients.</p>
+                        <p>We source our ingredients from local farmers who share our commitment to quality and sustainability. Our Shito is free from artificial preservatives, colors, and flavors, ensuring you enjoy the pure, authentic taste every time.</p>
+                        <p>Rich in antioxidants, our Shito adds a delicious kick to any meal while providing health benefits from its natural, wholesome ingredients.</p>
+                        <p>For the well-being and safety of our customers, the shito is being vetted and approved by the Food and Drugs Authority (FDA)</p>
+                        <div class="organic-badge">100% Organic Locally Sourced</div>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/OIG1.jpg" alt="Shito ingredients">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Preview Section -->
+        <section class="products">
+            <div class="container">
+                <h2 class="section-title">Our Products</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/Waakye.jpg" alt="Spicy Shito">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Spicy Shito</h3>
+                            <p class="product-desc">Enjoy your waakye meal with our rich, flavorful shito,it adds an irresistible taste and makes every bite even more delicious and satisfying. Small-sized Shito</p>
+                            <p class="product-price">GHS50.00</p>
+                            <a href="https://wa.me/0573279321" class="btn">Buy Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/rice.jpg" alt="Mild Shito">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Mild Shito</h3>
+                            <p class="product-desc">Our quality and healthy shito elevates your jollof, rich, and perfectly blended with vegetables for a taste that’s both appealing and truly captivating. Medium-sized Shito</p>
+                            <p class="product-price">GHS100.00</p>
+                            <a href="https://wa.me/0573279321" class="btn">Buy Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/banku.jpg" alt="Vegan Shito">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Vegan Shito</h3>
+                            <p class="product-desc">Enjoying a banku meal with our shito brings back the rich taste and cultural essence of Ghanaian cuisine a perfect blend of health, tradition, and unforgettable flavor. Large-sized Shito.</p>
+                            <p class="product-price">GHS150.00</p>
+                            <a href="https://wa.me/0573279321" class="btn">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="#" class="nav-link" data-page="products-page"><i class="btn">View All Products</i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"This is the best Shito I've ever outside of Ghana! The flavor is authentic and it reminds me of home."</p>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/88980.jpg" alt="Fatawu Ayaaba">
+                            </div>
+                            <div>
+                                <div class="author-name">Fatawu Ayaaba</div>
+                                <div class="author-title">Regular Customer</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"As a restaurant owner, finding consistent quality Shito was challenging until I discovered L-GRAL'S. My customers love it!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/charisma.jpg" alt="Haruna Halidu">
+                            </div>
+                            <div>
+                                <div class="author-name">Haruna Dauda</div>
+                                <div class="author-title">Restaurant Owner</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"The vegan option is amazing! I'm so glad I can enjoy authentic Shito while maintaining my plant-based diet."</p>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/madam.jpg" alt="Dr. Mighty">
+                            </div>
+                            <div>
+                                <div class="author-name">Dr. Mighty</div>
+                                <div class="author-title">UENR Lecturer</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners Section -->
+        <section class="partners">
+            <div class="container">
+                <h2 class="section-title">As Featured In</h2>
+                <div class="partners-grid">
+                    <div class="partner-logo">
+                        <img src="https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/foodie.jpg" alt="Foodie Magazine">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/eats.png" alt="Spice TV">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/tn_Spice.png" alt="Ghana Eats">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/network.png" alt="Afro Foods Network">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Products Page -->
+    <div id="products-page" class="ad-page">
+        <section class="products">
+            <div class="container">
+                <h2 class="section-title">Our Product Range</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/banku.jpg" alt="Spicy Shito">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Spicy Shito</h3>
+                            <p class="product-desc">Enjoying a banku meal with our shito brings back the rich taste and cultural essence of Ghanaian cuisine a perfect blend of health, tradition, and unforgettable flavor.Small-sized Shito</p>
+                            <p class="product-price">GHS50.00</p>
+                            <a href="https://wa.me/0573279321" class="btn">Buy Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/kenkey.jpg" alt="Mild Shito">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Mild Shito</h3>
+                            <p class="product-desc">The authentic taste of Ghana, made using our traditional family recipe passed down through generations, makes your kenkey one of the best tastes you could ever experience.Medium-sized Shito</p>
+                            <p class="product-price">GHS100.00</p>
+                            <a href="https://wa.me/0573279321" class="btn">Buy Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/Waakye.jpg" alt="Vegan Shito">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Vegan Shito</h3>
+                            <p class="product-desc">Enjoy your waakye meal with our rich, flavorful shito,it adds an irresistible taste and makes every bite even more delicious and satisfying.Large-sized Shito</p>
+                            <p class="product-price">GHS150.00</p>
+                            <a href="https://wa.me/0573279321" class="btn">Buy Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/rice.jpg" alt="Original Shito">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Original Recipe</h3>
+                            <p class="product-desc">Our quality and healthy shito elevates your jollof, rich, and perfectly blended with vegetables for a taste that’s both appealing and truly captivating. Small container</p>
+                            <p class="product-price">GHS50.00</p>
+                            <a href="https://wa.me/0573279321" class="btn">Buy Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/shito_cup.jpg" alt="Gourmet Shito">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Gourmet Blend</h3>
+                            <p class="product-desc">Premium ingredients for a special experience. Includes exotic spices and aged ingredients for depth of flavor.Medium container</p>
+                            <p class="product-price">GHS100.00</p>
+                            <a href="https://wa.me/0573279321" class="btn">Buy Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/shito-cup.jpg" alt="Gift Set">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Gift Set</h3>
+                            <p class="product-desc">Perfect for introducing friends to the flavors of Ghana. Includes all five varieties of our Shito. Big container</p>
+                            <p class="product-price">GHS150.00</p>
+                            <a href="https://wa.me/0573279321" class="btn">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Advertisement Page -->
+    <div id="ad-page" class="ad-page">
+        <section class="video-ad">
+            <div class="container">
+                <h2 class="section-title">Our Story in Motion</h2>
+                <div class="video-container">
+                   <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/111729047687262/videos/477490970133704/" width="500" height="280" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="events">
+            <div class="container">
+                <h2 class="section-title">Upcoming Events & Pop-up Sales</h2>
+                <div class="events-grid">
+                    <div class="event-card">
+                        <div class="event-date">November 15-16, 2025</div>
+                        <h3>Accra Food Festival</h3>
+                        <p>Independence Square, Accra</p>
+                        <p>Visit our booth for free samples and special festival discounts!</p>
+                    </div>
+                    
+                    <div class="event-card">
+                        <div class="event-date">January 22, 2026</div>
+                        <h3>Kumasi Pop-up Market</h3>
+                        <p>Prempeh Assembly Hall, Kumasi</p>
+                        <p>Exclusive launch of our new extra spicy variant!</p>
+                    </div>
+                    
+                    <div class="event-card">
+                        <div class="event-date">March 5, 2025</div>
+                        <h3>Cape Coast Farmers Market</h3>
+                        <p>Cape Coast Castle Grounds</p>
+                        <p>Meet the producers and learn about our sourcing process.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wholesale">
+            <div class="container">
+                <h2 class="section-title">Wholesale Offers</h2>
+                <div class="wholesale-offer">
+                    <p>Discover a World of Wellness with L-GRAL’S Services!
+                        At L-GRAL’S, we’re all about bringing positivity into your everyday life. 
+                        From bold black pepper (shito) to exciting new products coming soon, our ever-growing selection is designed to enhance your lifestyle and delight your senses.
+                    </p><br/>
+                    <p>Are you a restaurant, grocery store, or bulk buyer interested in carrying L-GRAL'S Shito?</p>
+                    <p>We offer competitive wholesale affordable pricing and flexible terms for qualified businesses.</p>
+                    <p>Contact us today to discuss partnership opportunities and request our wholesale catalog.</p>
+                    <a href="https://wa.me/0573279321" class="nav-link" data-page="contact-page" style="margin-top: 20px;"><i class="btn">Contact for Wholesale</i></a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact & Social Media Page -->
+    <div id="contact-page" class="contact-page">
+        <section class="contact">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-container">
+                    <div class="contact-form">
+                        <form id="contactForm" 
+                              action="https://formspree.io/f/mvgwpvnz"
+                              method="POST">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" ><a class="btn">Send Message</a></button>
+                        </form>
+                    </div>
+                    
+                    <div class="map-container">
+                        <div id="map"></div>
+                    </div>
+                </div>
+                
+                <div class="social-media">
+                    <h3>Follow Us on Social Media</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100066994593547" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/0573279321" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="social-feed">
+                    <h3>#LGRALSShito</h3>
+                    <p>Check out how our customers are enjoying L-GRAL'S Shito!</p>
+                    <!-- Instagram/TikTok feed would be embedded here -->
+                    <div style="background: #f5f5f5; padding: 40px; border-radius: 8px; margin-top: 20px;">
+                        <p>Instagram and TikTok feeds will be embedded here</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Why Choose L-GRAL'S Shito?</h3>
+                    <div class="why-choose">
+                        <p>It is the quality and indigenous original Ghana nutrients providing the best taste a customer would ever have. Our products are crafted using traditional methods and the finest local ingredients.</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#" class="nav-link" data-page="home-page">Home</a></li>
+                    <li><a href="#" class="nav-link" data-page="products-page">Products</a></li>
+                    <li><a href="#" class="nav-link" data-page="ad-page">Advertisement</a></li>
+                    <li><a href="#" class="nav-link" data-page="contact-page">Contact</a></li>
+                </ul>
+            </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-envelope"></i> Email: lgralsservices@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> Phone: +233 573 279 321</p>
+                    <p><i class="fas fa-map"></i> Address: Accra, Ghana</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 L-GRAL'S Service. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="back.js"></script>
+    
+</body>
+</html>
