@@ -1,12 +1,23 @@
+// Loading screen
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        document.getElementById('loader').style.opacity = '0';
+        setTimeout(function() {
+            document.getElementById('loader').style.display = 'none';
+        }, 1);
+    }, 2);
+});
 
 // Navigation functionality
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
-const pages = document.querySelectorAll('div[id$="-page"]');
+const pages = document.querySelectorAll('.page');
 
 hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('active');
+    hamburger.innerHTML = navMenu.classList.contains('active') ? 
+        '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
 });
 
 // Page navigation
@@ -17,82 +28,46 @@ navLinks.forEach(link => {
         
         // Hide all pages
         pages.forEach(page => {
-            page.style.display = 'none';
+            page.classList.remove('active');
         });
         
         // Show target page
-        document.getElementById(targetPage).style.display = 'block';
+        document.getElementById(targetPage).classList.add('active');
         
         // Close mobile menu if open
         navMenu.classList.remove('active');
+        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
         
         // Scroll to top
         window.scrollTo(0, 0);
         
-        // If products page, initialize animations
-        if (targetPage === 'products-page') {
-            setTimeout(animateProductCards, 100);
-        }
-        
-        // If contact page, initialize map
-        if (targetPage === 'contact-page') {
-            setTimeout(initMap, 100);
-        }
+        // Initialize animations for the new page
+        setTimeout(initPageAnimations, 3);
     });
-});
-
-// EmailJS initialization
-(function() {
-    emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual EmailJS public key
-})();
-
-// Contact form submission
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    // Send the form using EmailJS
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
-        .then(function() {
-            alert('Message sent successfully!');
-            document.getElementById('contactForm').reset();
-        }, function(error) {
-            alert('Failed to send message. Please try again.');
-            console.log('EmailJS error:', error);
-        });
 });
 
 // Set home page as default on load
 window.addEventListener('load', () => {
-    pages.forEach(page => {
-        if (page.id !== 'home-page') {
-            page.style.display = 'none';
-        }
-    });
-    
     // Initialize image slider
     initImageSlider();
     
-    // Initialize product card animations
-    animateProductCards();
+    // Initialize animations
+    initPageAnimations();
     
     // Initialize WhatsApp message
     setTimeout(() => {
         document.getElementById('whatsappMsg').classList.add('visible');
     }, 2000);
-    
-    // Initialize map if on contact page
-    if (window.location.hash === '#contact') {
-        document.getElementById('home-page').style.display = 'none';
-        document.getElementById('contact-page').style.display = 'block';
-        setTimeout(initMap, 100);
-    }
 });
 
 // Image slider functionality
 function initImageSlider() {
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.slide-dot');
+    const prevBtn = document.querySelector('.slide-prev');
+    const nextBtn = document.querySelector('.slide-next');
     let currentSlide = 0;
+    let slideInterval;
     
     function showSlide(n) {
         slides.forEach(slide => slide.classList.remove('active'));
@@ -103,35 +78,81 @@ function initImageSlider() {
         currentSlide = n;
     }
     
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+    
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
+    
     dots.forEach(dot => {
         dot.addEventListener('click', () => {
             const slideIndex = parseInt(dot.getAttribute('data-slide'));
             showSlide(slideIndex);
+            resetInterval();
         });
     });
+    
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetInterval();
+    });
+    
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetInterval();
+    });
+    
+    function resetInterval() {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 5000);
+    }
     
     // Auto advance slides
-    setInterval(() => {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-    }, 5000);
+    slideInterval = setInterval(nextSlide, 5000);
+    
+    // Pause on hover
+    const slider = document.querySelector('.image-slider');
+    slider.addEventListener('mouseenter', () => {
+        clearInterval(slideInterval);
+    });
+    
+    slider.addEventListener('mouseleave', () => {
+        slideInterval = setInterval(nextSlide, 5000);
+    });
 }
 
-// Animate product cards on scroll
-function animateProductCards() {
+// Initialize animations for elements when they come into view
+function initPageAnimations() {
+    // Animate about image
+    const aboutImage = document.getElementById('aboutImage');
+    if (aboutImage) {
+        aboutImage.classList.add('visible');
+    }
+    
+    // Animate product cards
     const productCards = document.querySelectorAll('.product-card');
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.1 });
-    
-    productCards.forEach(card => {
-        observer.observe(card);
+    productCards.forEach((card, index) => {
+        setTimeout(() => {
+            card.classList.add('visible');
+        }, index * 200);
     });
+    
+    // Animate testimonial cards
+    const testimonialCards = document.querySelectorAll('.testimonial-card');
+    testimonialCards.forEach((card, index) => {
+        setTimeout(() => {
+            card.classList.add('visible');
+        }, index * 300);
+    });
+    
+    // Initialize map if on contact page
+    if (document.getElementById('contact-page').classList.contains('active')) {
+        setTimeout(initMap, 100);
+    }
 }
 
 // Initialize map
@@ -151,7 +172,45 @@ function initMap() {
         .openPopup();
 }
 
+// Contact form submission
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    // Simple form validation
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    
+    if (name && email && message) {
+        // Here you would typically send the form data to a server
+        // For now, we'll just show a success message
+        alert('Thank you for your message! We will get back to you soon.');
+        document.getElementById('contactForm').reset();
+    } else {
+        alert('Please fill in all fields.');
+    }
+});
+
 // Scroll animations
 window.addEventListener('scroll', () => {
-    animateProductCards();
+    initPageAnimations();
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+        navMenu.classList.remove('active');
+        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+    }
+});
+
+// Add hover effects to interactive elements
+document.querySelectorAll('.product-card, .event-card, .partner-logo, .organic-badge').forEach(element => {
+    element.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-5px)';
+    });
+    
+    element.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+    });
 });
