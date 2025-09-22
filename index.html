@@ -9,6 +9,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <h2>L-GRAL'S Service</h2>
+            <p>Loading the best Ghanaian Shito experience🍝💝...</p>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav>
         <div class="container nav-container">
@@ -24,7 +33,6 @@
                 <li><a href="#" class="nav-link" data-page="products-page">Products</a></li>
                 <li><a href="#" class="nav-link" data-page="ad-page">Advertisement</a></li>
                 <li><a href="#" class="nav-link" data-page="contact-page">Contact & Social</a></li>
-                
             </ul>
         </div>
     </nav>
@@ -38,7 +46,7 @@
     </div>
 
     <!-- Home Page -->
-    <div id="home-page">
+    <div id="home-page" class="page active">
         <!-- Hero Section -->
         <section class="hero">
             <div class="container">
@@ -88,6 +96,10 @@
                     <div class="slide-dot" data-slide="3"></div>
                     <div class="slide-dot" data-slide="4"></div>
                 </div>
+                <div class="slide-controls">
+                    <button class="slide-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="slide-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
             </div>
         </div>
 
@@ -100,10 +112,10 @@
                         <p>L-Grals Shito recipe has been passed down through generations, carefully preserving the authentic flavors of Ghanaian cuisine. Each jar of the shito is crafted with passion and precision, using only the finest ingredients.</p>
                         <p>We source our ingredients from local farmers who share our commitment to quality and sustainability. Our Shito is free from artificial preservatives, colors, and flavors, ensuring you enjoy the pure, authentic taste every time.</p>
                         <p>Rich in antioxidants, our Shito adds a delicious kick to any meal while providing health benefits from its natural, wholesome ingredients.</p>
-                        <p>For the well-being and safety of our customers, the shito is being vetted and approved by the Food and Drugs Authority (FDA)</p>
+                        <p>For the well-being and safety of our customers, the shito is being vetted and approved by the Food and Drugs Authority (FDA)</p>
                         <div class="organic-badge">100% Organic Locally Sourced</div>
                     </div>
-                    <div class="about-image">
+                    <div class="about-image" id="aboutImage">
                         <img src="https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/OIG1.jpg" alt="Shito ingredients">
                     </div>
                 </div>
@@ -121,7 +133,7 @@
                         </div>
                         <div class="product-info">
                             <h3 class="product-title">Spicy Shito</h3>
-                            <p class="product-desc">Enjoy your waakye meal with our rich, flavorful shito,it adds an irresistible taste and makes every bite even more delicious and satisfying. Small-sized Shito</p>
+                            <p class="product-desc">Enjoy your waakye meal with our rich, flavorful shito,it adds an irresistible taste and makes every bite even more delicious and satisfying. Small-sized Shito</p>
                             <p class="product-price">GHS50.00</p>
                             <a href="https://wa.me/+233573279321" class="btn">Buy Now</a>
                         </div>
@@ -133,7 +145,7 @@
                         </div>
                         <div class="product-info">
                             <h3 class="product-title">Mild Shito</h3>
-                            <p class="product-desc">Our quality and healthy shito elevates your jollof, rich, and perfectly blended with vegetables for a taste that’s both appealing and truly captivating. Medium-sized Shito</p>
+                            <p class="product-desc">Our quality and healthy shito elevates your jollof, rich, and perfectly blended with vegetables for a taste that's both appealing and truly captivating. Medium-sized Shito</p>
                             <p class="product-price">GHS100.00</p>
                             <a href="https://wa.me/+233573279321" class="btn">Buy Now</a>
                         </div>
@@ -145,14 +157,14 @@
                         </div>
                         <div class="product-info">
                             <h3 class="product-title">Vegan Shito</h3>
-                            <p class="product-desc">Enjoying a banku meal with our shito brings back the rich taste and cultural essence of Ghanaian cuisine a perfect blend of health, tradition, and unforgettable flavor. Large-sized Shito.</p>
+                            <p class="product-desc">Enjoying a banku meal with our shito brings back the rich taste and cultural essence of Ghanaian cuisine a perfect blend of health, tradition, and unforgettable flavor. Large-sized Shito.</p>
                             <p class="product-price">GHS150.00</p>
                             <a href="https://wa.me/+233573279321" class="btn">Buy Now</a>
                         </div>
                     </div>
                 </div>
                 <div style="text-align: center; margin-top: 30px;">
-                    <a href="#" class="nav-link" data-page="products-page"><i class="btn">View All Products</i></a>
+                    <a href="#" class="nav-link btn" data-page="products-page">View All Products</a>
                 </div>
             </div>
         </section>
@@ -227,7 +239,7 @@
     </div>
 
     <!-- Products Page -->
-    <div id="products-page" class="ad-page">
+    <div id="products-page" class="page">
         <section class="products">
             <div class="container">
                 <h2 class="section-title">Our Product Range</h2>
@@ -238,7 +250,7 @@
                         </div>
                         <div class="product-info">
                             <h3 class="product-title">Spicy Shito</h3>
-                            <p class="product-desc">Enjoying a banku meal with our shito brings back the rich taste and cultural essence of Ghanaian cuisine a perfect blend of health, tradition, and unforgettable flavor.Small-sized Shito</p>
+                            <p class="product-desc">Enjoying a banku meal with our shito brings back the rich taste and cultural essence of Ghanaian cuisine a perfect blend of health, tradition, and unforgettable flavor.Small-sized Shito</p>
                             <p class="product-price">GHS50.00</p>
                             <a href="https://wa.me/+233573279321" class="btn">Buy Now</a>
                         </div>
@@ -262,7 +274,7 @@
                         </div>
                         <div class="product-info">
                             <h3 class="product-title">Vegan Shito</h3>
-                            <p class="product-desc">Enjoy your waakye meal with our rich, flavorful shito,it adds an irresistible taste and makes every bite even more delicious and satisfying.Large-sized Shito</p>
+                            <p class="product-desc">Enjoy your waakye meal with our rich, flavorful shito,it adds an irresistible taste and makes every bite even more delicious and satisfying.Large-sized Shito</p>
                             <p class="product-price">GHS150.00</p>
                             <a href="https://wa.me/+233573279321" class="btn">Buy Now</a>
                         </div>
@@ -274,7 +286,7 @@
                         </div>
                         <div class="product-info">
                             <h3 class="product-title">Original Recipe</h3>
-                            <p class="product-desc">Our quality and healthy shito elevates your jollof, rich, and perfectly blended with vegetables for a taste that’s both appealing and truly captivating. Small container</p>
+                            <p class="product-desc">Our quality and healthy shito elevates your jollof, rich, and perfectly blended with vegetables for a taste that's both appealing and truly captivating. Small container</p>
                             <p class="product-price">GHS50.00</p>
                             <a href="https://wa.me/+233573279321" class="btn">Buy Now</a>
                         </div>
@@ -309,13 +321,12 @@
     </div>
 
     <!-- Advertisement Page -->
-    <div id="ad-page" class="ad-page">
+    <div id="ad-page" class="page">
         <section class="video-ad">
             <div class="container">
                 <h2 class="section-title">Our Story in Motion</h2>
                 <div class="video-container">
                    <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/111729047687262/videos/477490970133704/" width="500" height="280" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-
                 </div>
             </div>
         </section>
@@ -352,21 +363,21 @@
             <div class="container">
                 <h2 class="section-title">Wholesale Offers</h2>
                 <div class="wholesale-offer">
-                    <p>Discover a World of Wellness with L-GRAL’S Services!
-                        At L-GRAL’S, we’re all about bringing positivity into your everyday life. 
+                    <p>Discover a World of Wellness with L-GRAL'S Services!
+                        At L-GRAL'S, we're all about bringing positivity into your everyday life. 
                         From bold black pepper (shito) to exciting new products coming soon, our ever-growing selection is designed to enhance your lifestyle and delight your senses.
                     </p><br/>
                     <p>Are you a restaurant, grocery store, or bulk buyer interested in carrying L-GRAL'S Shito?</p>
                     <p>We offer competitive wholesale affordable pricing and flexible terms for qualified businesses.</p>
                     <p>Contact us today to discuss partnership opportunities and request our wholesale catalog.</p>
-                    <a href="https://wa.me/+233573279321" class="nav-link" data-page="contact-page" style="margin-top: 20px;"><i class="btn">Contact for Wholesale</i></a>
+                    <a href="#" class="btn nav-link" data-page="contact-page" style="margin-top: 20px;">Contact for Wholesale</a>
                 </div>
             </div>
         </section>
     </div>
 
     <!-- Contact & Social Media Page -->
-    <div id="contact-page" class="contact-page">
+    <div id="contact-page" class="page">
         <section class="contact">
             <div class="container">
                 <h2 class="section-title">Get In Touch</h2>
@@ -407,9 +418,8 @@
                 </div>
                 
                 <div class="social-feed">
-                    <h3>#LGRAL'S Service</h3>
+                    <h3>#LGRALSShito</h3>
                     <p>Check out how our customers are enjoying L-GRAL'S Shito!</p>
-                    <!-- Instagram/TikTok feed would be embedded here -->
                     <div style="background: #f5f5f5; padding: 40px; border-radius: 8px; margin-top: 20px;">
                         <p>Instagram and TikTok feeds will be embedded here</p>
                     </div>
@@ -455,7 +465,5 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="back.js"></script>
-    
 </body>
-
 </html>
